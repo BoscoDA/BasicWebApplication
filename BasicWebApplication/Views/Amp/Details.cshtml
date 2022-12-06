@@ -1,0 +1,66 @@
+﻿@model BasicWebApplication.Models.Amp
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Amp</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PluggedIn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PluggedIn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Powered)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Powered)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VolumeKnob)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VolumeKnob.Setting)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BassKnob)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BassKnob.Setting)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MiddleKnob)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MiddleKnob.Setting)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TrebleKnob)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TrebleKnob.Setting)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    <a asp-action="Index">Back to List</a>
+</div>

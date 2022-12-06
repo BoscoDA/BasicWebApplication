@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BasicWebApplication.Models.IAmp>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PluggedIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Powered)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PluggedIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Powered)
+                </td>
+                <td>
+                    @Html.Partial("_Knob", item.VolumeKnob)
+                </td>
+                <td>
+                    @Html.Partial("_Knob", item.BassKnob)
+                </td>
+                <td>
+                    @Html.Partial("_Knob", item.MiddleKnob)
+                </td>
+                <td>
+                    @Html.Partial("_Knob", item.VolumeKnob)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
